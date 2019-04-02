@@ -17,6 +17,10 @@ const About = () => {
     fetchData()
   }, [])
 
+  const refreshData = () => {
+    fetchData()
+  }
+
   return (
     <Layout>
       <div>
@@ -24,9 +28,14 @@ const About = () => {
           This is the About page
         </h1>
         <br ></br>
-        <button onClick={() => setDetailsDiv(!detailsDiv)}>
-          {!detailsDiv ? 'Show Me' : 'Hide Me'}
+        <div>
+          <button onClick={() => setDetailsDiv(!detailsDiv)}>
+            {!detailsDiv ? 'Show Me' : 'Hide Me'}
+          </button>
+          <button onClick={() => refreshData()}>
+            Refresh
         </button>
+        </div>
         {detailsDiv && <DetailsDiv data={data} />}
       </div>
     </Layout>
