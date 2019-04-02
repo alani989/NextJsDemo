@@ -11,7 +11,9 @@ const Home = () => {
             This is the home page
           </h1>
         </div>
-        <MyTable />
+        <div className='pt-3'>
+          <MyTable />
+        </div>
       </Layout>
     </MyContext.Provider>
   )

@@ -1,7 +1,5 @@
 import Head from 'next/head'
-import Link from 'next/link'
-
-import { Navbar, Nav } from 'react-bootstrap'
+import Navbar from './Navbar'
 
 const Navigation = () => {
   return (
@@ -16,17 +14,17 @@ const Navigation = () => {
           integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
           crossorigin="anonymous"
         />
+        {/* semantic ui */}
+        <link
+          rel="stylesheet"
+          href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
+        />
       </Head>
 
-      <Navbar bg="dark" variant="dark">
-        <Nav className="mr-auto">
-          <Link href="/"><a>Home</a></Link>
-        </Nav>
-        <Nav className="mr-auto">
-          <Link href="/about"><a>About</a></Link>
-        </Nav>
-      </Navbar>
-
+      <div>
+        <Navbar/>
+      </div>
+    
     </div>
   )
 }
