@@ -24,14 +24,12 @@ const About = () => {
 
   useEffect(() => {
     fetchData()
-    fetchDataGraphQL()
+    // fetchDataGraphQL()
   }, [])
 
   const refreshData = () => {
     fetchData()
   }
-
-  console.log(graphQLData)
 
   return (
     <Layout>
