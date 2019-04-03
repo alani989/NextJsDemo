@@ -5,6 +5,7 @@ import { DetailsDiv } from '../components/DetailsDiv'
 const About = () => {
   const [data, setData] = useState(null)
   const [detailsDiv, setDetailsDiv] = useState(false)
+  const [graphQLData, setGraphQLData] = useState()
 
   const fetchData = async () => {
     const response = await fetch(`https://api.randomuser.me/`)
@@ -13,13 +14,24 @@ const About = () => {
     setData(item)
   }
 
+  const fetchDataGraphQL = async () => {
+    const response = await fetch(`http://localhost:4000/test`)
+    const data = await response.json()
+    setGraphQLData(data)
+  }
+
+
+
   useEffect(() => {
     fetchData()
+    fetchDataGraphQL()
   }, [])
 
   const refreshData = () => {
     fetchData()
   }
+
+  console.log(graphQLData)
 
   return (
     <Layout>
